@@ -71,7 +71,7 @@ normal_fea_ext.to(device)
 
 
 sfsnet = SimpleSfSNet(wo_lambertian=True)
-loss_files = glob.glob('./weights/simple-sfsnet-owcdl-da-wo-lambertian/???.ckpt')
+loss_files = glob.glob('./weights/simple-sfsnet-da/???.ckpt')
 checkpoint_path = None
 min_val_loss = 1e12
 for f in loss_files:
