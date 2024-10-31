@@ -1,0 +1,6 @@
+[submodule "info_nce_pytorch"]
+	path = info_nce_pytorch
+	url = git@github.com:RElbers/info-nce-pytorch.git
+[submodule "info-nce-pytorch"]
+	path = info-nce-pytorch
+	url = git@github.com:RElbers/info-nce-pytorch.git

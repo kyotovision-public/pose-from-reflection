@@ -1,0 +1,34 @@
+{
+    "exp_name": "test_depth_grid_nlmvss",
+    "dataset_path":  "./data/nLMVS-Synth-Eval/nlmvs-synth-eval",
+    "dataset_type": "nlmvss",
+    "dataset_confs": {
+        "num_neighbors": 0,
+        "use_crop": true,
+        "img_size": [256,256],
+        "rmap_mode": "probe",
+        "rmap_size": [256,256],
+        "mask_img": true,
+        "use_diffuse_illum": false,
+        "normalize_world_scale": true,
+        "use_diffuse_img": false,
+        "use_diffuse_rmap": false,
+        "use_soft_mask": true
+    },
+    "view_start": 5,
+    "view_end": 7,
+    "view_skip": 1,
+    "max_sdf_resolution":  128,
+    "debug_with_gt": false,
+    "refine_verts": true,
+    "use_nlmvs_sfsnet": false,
+    "loss_confs": {
+        "sfs_loss_weight": 1e0,
+        "mask_loss_weight": 1e3,
+        "nerf_loss_weight": 1e-1,
+        "nerf_diffuse_loss_weight": 0,
+        "laplacian_loss_weight": 1e-4,
+        "occluding_boundary_loss_weight": 1e-2,
+        "normal_reg_loss_weight": 1e1
+    }
+}

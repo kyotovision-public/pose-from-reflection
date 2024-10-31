@@ -1,0 +1,1 @@
+singularity build --fakeroot --force deepsharm.sif deepsharm.def

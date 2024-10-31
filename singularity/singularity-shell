@@ -1,0 +1,8 @@
+cmd="singularity shell --no-home --nv -e"
+for item_path in `\find ~/ -mindepth 1 -maxdepth 1 -name "?*"`; do
+  cmd="${cmd} --bind ${item_path}:${item_path}"
+done
+cmd="${cmd} --env DISPLAY=\$DISPLAY --pwd ~/ ./deepsharm.sif"
+
+# echo $cmd
+eval "${cmd}"

@@ -1,0 +1,33 @@
+if [ $# -le 2 ]; then
+  echo "Usage: ./singularity-exec-remote \${server_name} \${work_dir} \${command}"
+  echo "Example: ./singularity-exec-remote orca / ls -al"
+  exit 1
+fi
+
+IMAGE_DIR=$(cd $(dirname $0);pwd)
+WORK_DIR=$2
+
+if [ -z $CUDA_VISIBLE_DEVICES ]; then
+  NUM_DEVICES=`ssh ${1} /usr/bin/nvidia-smi -L | wc -l`
+  CUDA_VISIBLE_DEVICES=""
+  i=0
+  while [ $((NUM_DEVICES-i)) -gt 0 ]
+  do
+    if [ $((i)) -gt 0 ]; then
+      CUDA_VISIBLE_DEVICES="${CUDA_VISIBLE_DEVICES},"
+    fi
+    CUDA_VISIBLE_DEVICES="${CUDA_VISIBLE_DEVICES}${i}"
+    i=$((i+1))
+  done
+fi
+
+cmd="ssh ${1} /usr/bin/singularity exec --no-home --nv -e"
+for item_path in `ssh humpback find ~/ -mindepth 1 -maxdepth 1`; do
+  cmd="${cmd} --bind ${item_path}:${item_path}"
+done
+cmd="${cmd} --bind /d/workspace/kyamashita:/d/workspace/kyamashita"
+
+cmd="${cmd} --env DISPLAY=\$DISPLAY --env CUDA_VISIBLE_DEVICES=\${CUDA_VISIBLE_DEVICES}"
+cmd="${cmd} --pwd ${WORK_DIR} ${IMAGE_DIR}/deepsharm.sif \"\${@:3:\$#}\""
+
+eval "${cmd}"

@@ -1,0 +1,10 @@
+__pycache__
+weights
+run
+pretrained-models
+depth_anything_v2
+
+data/*
+!data/.gitkeep
+
+*.sif

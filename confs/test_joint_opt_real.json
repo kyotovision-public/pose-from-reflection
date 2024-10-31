@@ -1,0 +1,35 @@
+{
+    "exp_name": "test_shape_from_pose_real",
+    "dataset_path":  "./data/real_data",
+    "dataset_type": "real",
+    "dataset_confs": {
+        "num_neighbors": 0,
+        "use_crop": true,
+        "img_size": [256,256],
+        "rmap_mode": "probe",
+        "rmap_size": [256,256],
+        "mask_img": true,
+        "use_diffuse_illum": true,
+        "normalize_world_scale": true,
+        "use_diffuse_img": true,
+        "use_diffuse_rmap": true,
+        "use_soft_mask": true
+    },
+    "view_start": 0,
+    "view_end": 2,
+    "view_skip": 1,
+    "max_sdf_resolution":  256,
+    "debug_with_gt": false,
+    "refine_verts": true,
+    "refine_rotation": false,
+    "refine_translation": true,
+    "use_nlmvs_sfsnet": false,
+    "loss_confs": {
+        "sfs_loss_weight": 1e0,
+        "mask_loss_weight": 1e3,
+        "nerf_loss_weight": 1e0,
+        "nerf_diffuse_loss_weight": 0,
+        "laplacian_loss_weight": 1e-5,
+        "rmap_loss_weight": 1e0
+    }
+}
