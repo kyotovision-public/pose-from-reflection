@@ -500,7 +500,7 @@ def decode_param_sym(param):
 # RANSAC
 best_score = -np.inf
 
-bar = tqdm(range(200))
+bar = tqdm(range(1000))
 for _ in bar:
     # random sampling of n matches from all detected matches
     sampled_idx_nm = np.random.choice(len(normal1_nm), 5)

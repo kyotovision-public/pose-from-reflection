@@ -27,11 +27,11 @@ build.sh
 
 ### Demo
 
-Please download the pretrained models (weights.zip) from [here]() and unzip it in the root directory of this project. 
+Please download the pretrained models (weights.zip) from [here](https://www.dropbox.com/scl/fo/2hepaqffjfi4y2i96sfv9/APHinimF3l3--53mw_8dnYY?rlkey=ycg906ujtu719d2qcjrm0d4ra&st=49kp5218&dl=0) and unzip it in the root directory of this project. 
 
 #### Experiments on synthetic images
 
-1. Download the nLMVS-Synth dataset (Test set) from [here](https://github.com/kyotovision-public/nLMVS-Net) (or synthetic images of a cow model from [here]()). Update ``confs/test_depth_grid_nlmvss.json`` and ``confs/test_joint_opt_nlmvss.json`` according to the location of the downloaded data.
+1. Download the nLMVS-Synth dataset (Test set) from [here](https://github.com/kyotovision-public/nLMVS-Net) (or synthetic images of a cow model from [here](https://www.dropbox.com/scl/fo/2hepaqffjfi4y2i96sfv9/APHinimF3l3--53mw_8dnYY?rlkey=ycg906ujtu719d2qcjrm0d4ra&st=49kp5218&dl=0)). Update ``confs/test_depth_grid_nlmvss.json`` and ``confs/test_joint_opt_nlmvss.json`` according to the location of the downloaded data.
 
 2. Run joint shape, camera pose, and reflectance map recovery:
 ```
@@ -47,7 +47,7 @@ Example: python plot_cams.py ./run/test_shape_from_pose_nlmvss_3/152
 
 #### Experiments on real image pairs
 
-1. Download the real image data from [here](). Update ``confs/test_depth_grid_real.json`` and ``confs/test_joint_opt_real.json`` according to the location of the downloaded data.
+1. Download the real image data from [here](https://www.dropbox.com/scl/fo/2hepaqffjfi4y2i96sfv9/APHinimF3l3--53mw_8dnYY?rlkey=ycg906ujtu719d2qcjrm0d4ra&st=49kp5218&dl=0). Update ``confs/test_depth_grid_real.json`` and ``confs/test_joint_opt_real.json`` according to the location of the downloaded data.
 
 2. Run joint shape, camera pose, and reflectance map recovery:
 ```
@@ -69,7 +69,7 @@ bash download_depth_anything_v2.sh
 
 #### Experiments on real image pairs of scenes with different objects
 
-1. Download the real image data from [here](). Update ``confs/test_joint_opt_real_scene.json`` according to the location of the downloaded data.
+1. Download the real image data from [here](https://www.dropbox.com/scl/fo/2hepaqffjfi4y2i96sfv9/APHinimF3l3--53mw_8dnYY?rlkey=ycg906ujtu719d2qcjrm0d4ra&st=49kp5218&dl=0). Update ``confs/test_joint_opt_real_scene.json`` according to the location of the downloaded data.
 
 2. Run joint shape, camera pose, and reflectance map recovery:
 ```
@@ -81,7 +81,7 @@ The final results are saved to ``./run/test_shape_from_pose_real_scene_3/${OBJEC
 
 ### Training
 
-Please download the training data (rmap-fea-ext.zip) from [here]() and uncompress the zip file. We assume that the training data are in ``${HOME}/data/tmp``.
+Please download the training data (rmap-fea-ext.zip) from [here](https://www.dropbox.com/scl/fo/2hepaqffjfi4y2i96sfv9/APHinimF3l3--53mw_8dnYY?rlkey=ycg906ujtu719d2qcjrm0d4ra&st=49kp5218&dl=0) and uncompress the zip file. We assume that the training data are in ``${HOME}/data/tmp``.
 
 You can train the feature extractors for the correspondence detection using scripts in the ``training`` directory.
 
