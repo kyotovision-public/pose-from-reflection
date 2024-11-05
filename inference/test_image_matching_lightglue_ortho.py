@@ -11,6 +11,7 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument('object_id', type=int, default=0)
+parser.add_argument('--dataset-dir', type=str, default='./data/real_scene_data')
 parser.add_argument('-v1', '--first-view', type=int, default=0)
 parser.add_argument('-v2', '--second-view', type=int, default=1)
 parser.add_argument('--gpu', type=int, default=None)
@@ -43,7 +44,7 @@ np.random.seed(1)
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 object_id=args.object_id
-dataset_dir='/home/kyamashita/data/scenes_with_reflective_objects/out'
+dataset_dir=args.dataset_dir
 img_dir=dataset_dir+'/'+str(object_id).zfill(5)
 #result_dir='./run/test_on_synthetic_erroneous/080'
 

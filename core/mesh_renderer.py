@@ -5,7 +5,8 @@ import nvdiffrast.torch as dr
 
 class MeshRenderer:
     def __init__(self, device=None):
-        self.glctx = dr.RasterizeGLContext(device=device)
+        #self.glctx = dr.RasterizeGLContext(device=device)
+        self.glctx = dr.RasterizeCudaContext(device=device)
 
     # verts: Nverts*3, dtype=torch.float32
     # faces: Nfaces*3, dtype=torch.int32

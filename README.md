@@ -42,7 +42,7 @@ Example: python run_joint_est_nlmvss.py 152
 The final results are saved to ``./run/test_shape_from_pose_nlmvss_3/${OBJECT_INDEX}``. ``plot_cams.py`` can visualize the camera pose results:
 ```
 Usage: python plot_cams.py ${RESULT_PATH}
-Example: python plot_cams ./run/test_shape_from_pose_nlmvss_3/152
+Example: python plot_cams.py ./run/test_shape_from_pose_nlmvss_3/152
 ```
 
 #### Experiments on real image pairs
@@ -57,7 +57,7 @@ Example: python run_joint_est_real.py 03
 
 The final results are saved to ``./run/test_shape_from_pose_real_3/${OBJECT_INDEX}``.
 
-(Optional) You can leverage DepthAnythingV2 in the geometry recovery by adding ``--depth-anything`` flag
+(Optional) You can leverage DepthAnythingV2 as regularizer for the geometry recovery by adding ``--depth-anything`` flag
 ```
 python run_joint_est_real.py --depth-anything 03
 ```

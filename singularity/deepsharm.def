@@ -94,7 +94,7 @@ From: ubuntu:20.04
     python3 -m pip install pycalib-simple==2024.9.22.2
 
     # lightglue
-    git clone https://github.com/cvg/LightGlue.git@edb2b838efb2ecfe3f88097c5fad9887d95aedad /opt/third_party/LightGlue && cd /opt/third_party/LightGlue
+    git clone https://github.com/cvg/LightGlue.git /opt/third_party/LightGlue && cd /opt/third_party/LightGlue
     python3 -m pip install -e .
 
 %environment

@@ -2,6 +2,7 @@ import subprocess
 import argparse
 import numpy as np
 from core.sfm_utils import matrix_to_euler
+import json
 
 parser = argparse.ArgumentParser()
 parser.add_argument('object_id')
@@ -36,12 +37,15 @@ if args.depth_anything:
     exp_name += '_da'
 
 
+with open('./confs/test_joint_opt_real_scene.json', 'r') as f:
+    dataset_dir = json.load(f)['dataset_path']
 src_cam_file = './run/image_matching_lightglue_ortho/'+str(object_id).zfill(2)+'/est_pose_0_1.npz'
 
 if True:
     # SfM
     subprocess.run([
-        'python', 'inference/test_image_matching_lightglue_ortho.py', str(object_id)
+        'python', 'inference/test_image_matching_lightglue_ortho.py', str(object_id),
+        '--dataset-dir', dataset_dir
     ]+(['--gpu', str(args.gpu)] if not (args.gpu is None) else []))
 
     # DeepShaRM
