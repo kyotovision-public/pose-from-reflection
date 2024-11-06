@@ -1,6 +1,6 @@
 # Correspondences of the Third Kind: Camera Pose Estimation from Object Reflection
 
-This repository provides an inplementation of our paper [Correspondences of the Third Kind: Camera Pose Estimation from Object Reflection](https://vision.ist.i.kyoto-u.ac.jp/research/3rdcorr/) in ECCV 2024. If you use our code and data please cite our paper.
+This repository provides an implementation of our paper [Correspondences of the Third Kind: Camera Pose Estimation from Object Reflection](https://vision.ist.i.kyoto-u.ac.jp/research/3rdcorr/) in ECCV 2024. If you use our code and data please cite our paper.
 
 Please note that this is research software and may contain bugs or other issues – please use it at your own risk. If you experience major problems with it, you may contact us, but please note that we do not have the resources to deal with all issues.
 
@@ -27,7 +27,7 @@ build.sh
 
 ### Demo
 
-Please download the pretrained models (weights.zip) from [here](https://www.dropbox.com/scl/fo/2hepaqffjfi4y2i96sfv9/APHinimF3l3--53mw_8dnYY?rlkey=ycg906ujtu719d2qcjrm0d4ra&st=49kp5218&dl=0) and unzip it in the root directory of this project. 
+Please download the pretrained models (weights.zip) from [here](https://www.dropbox.com/scl/fo/2hepaqffjfi4y2i96sfv9/APHinimF3l3--53mw_8dnYY?rlkey=ycg906ujtu719d2qcjrm0d4ra&st=49kp5218&dl=0) and unzip them in the root directory of this project. 
 
 #### Experiments on synthetic images
 
@@ -57,11 +57,11 @@ Example: python run_joint_est_real.py 03
 
 The final results are saved to ``./run/test_shape_from_pose_real_3/${OBJECT_INDEX}``.
 
-(Optional) You can leverage DepthAnythingV2 as regularizer for the geometry recovery by adding ``--depth-anything`` flag
+(Optional) You can leverage DepthAnythingV2 as a regularizer for the geometry recovery by adding ``--depth-anything`` flag:
 ```
 python run_joint_est_real.py --depth-anything 03
 ```
-For this, please download the code and data of DepthAnythingV2 by using ``download_depth_anything_v2.sh``
+For this, please download the code and data of DepthAnythingV2 by using: ``download_depth_anything_v2.sh``
 ```
 bash download_depth_anything_v2.sh
 ```
@@ -81,9 +81,9 @@ The final results are saved to ``./run/test_shape_from_pose_real_scene_3/${OBJEC
 
 ### Training
 
-Please download the training data (rmap-fea-ext.zip) from [here](https://www.dropbox.com/scl/fo/2hepaqffjfi4y2i96sfv9/APHinimF3l3--53mw_8dnYY?rlkey=ycg906ujtu719d2qcjrm0d4ra&st=49kp5218&dl=0) and uncompress the zip file. We assume that the training data are in ``${HOME}/data/tmp``.
+Please download the training data (rmap-fea-ext.zip) from [here](https://www.dropbox.com/scl/fo/2hepaqffjfi4y2i96sfv9/APHinimF3l3--53mw_8dnYY?rlkey=ycg906ujtu719d2qcjrm0d4ra&st=49kp5218&dl=0) and uncompress the zip file. We assume the training data are in ``${HOME}/data/tmp``.
 
-You can train the feature extractors for the correspondence detection using scripts in the ``training`` directory.
+You can train the feature extractors for correspondence detection using scripts in the ``training`` directory.
 
 Training of the feature extractor for normal maps:
 ```
@@ -98,7 +98,7 @@ python training/train_rmap_fea_ext.py
 
 ### Empirical analysis of the number of correspondences required for the pose recovery
 
-1. Generate synthetic correspondences:
+1. Generate synthetic correspondences for the experiments:
 ```
 python empirical_analysis/test_inv_gbr_data_gen.py
 ```
@@ -108,8 +108,10 @@ python empirical_analysis/test_inv_gbr_data_gen.py
 python empirical_analysis/run_test_inv_gbr.py
 ```
 
-Evaluation:
+3. Evaluation:
 ```
 python empirical_analysis/eval_test_inv_gbr.py
 python empirical_analysis/plot_inv_gbr_results.py
 ```
+
+The results are saved to ``./run/test_inv_gbr`` (raw results), ``./run/eval_test_inv_gbr`` (quantitative results), and ``./run/plot_inv_gbr_results`` (visualization of the quantitative results).
