@@ -1,0 +1,20 @@
+{
+    "exp_name": "deepsharm_nlmvsr5nv",
+    "dataset_path":  "./data/nLMVS-Real/nlmvs-real",
+    "dataset_type": "nlmvsr",
+    "dataset_confs": {
+        "img_size": [256,256]
+    },
+    "view_skip": 1,
+    "reference_view_id": 0,
+    "num_neighboring_views": 4,
+    "max_sdf_resolution":  128,
+    "debug_with_gt": false,
+    "refine_verts": true,
+    "loss_confs": {
+        "sfs_loss_weight": 1e0,
+        "mask_loss_weight": 1e3,
+        "nerf_loss_weight": 1e1,
+        "laplacian_loss_weight": 1e-4
+    }
+}

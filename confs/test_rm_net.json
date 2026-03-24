@@ -1,0 +1,14 @@
+{
+    "exp_name": "test_rm_net_on_nlmvss",
+    "dataset_path":  "./data/nLMVS-Synth-Eval/nlmvs-synth-eval",
+    "dataset_type": "nlmvss",
+    "dataset_confs": {
+        "num_neighbors": 0,
+        "use_crop": true,
+        "img_size": [128,128],
+        "rmap_mode": "probe",
+        "rmap_size": [256,256],
+        "mask_img": true,
+        "normalize_world_scale": true
+    }
+}

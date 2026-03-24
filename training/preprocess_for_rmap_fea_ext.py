@@ -64,7 +64,7 @@ dataset_options = {
 }
 dataset = nLMVSSynthDataset(os.environ['HOME']+'/data/mvs_train/rendered', **dataset_options)
 
-brdf_files = sorted(glob('/home/kyamashita/data/BRDF/synthetic-brdf/brdfs/*.binary'))
+brdf_files = sorted(glob('./data/BRDF/synthetic-brdf/brdfs/*.binary'))
 
 dataloader = DataLoader(dataset, batch_size=1, shuffle=False, num_workers=4, pin_memory=True)
 

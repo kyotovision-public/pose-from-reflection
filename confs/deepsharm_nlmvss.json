@@ -1,0 +1,25 @@
+{
+    "exp_name": "deepsharm_nlmvss",
+    "dataset_path":  "./data/nLMVS-Synth-Eval/nlmvs-synth-eval",
+    "dataset_type": "nlmvss",
+    "dataset_confs": {
+        "num_neighbors": 0,
+        "use_crop": true,
+        "img_size": [256,256],
+        "rmap_mode": "probe",
+        "rmap_size": [256,256],
+        "mask_img": true,
+        "normalize_world_scale": true,
+        "use_soft_mask": true
+    },
+    "view_skip": 2,
+    "max_sdf_resolution":  128,
+    "debug_with_gt": false,
+    "refine_verts": true,
+    "loss_confs": {
+        "sfs_loss_weight": 1e0,
+        "mask_loss_weight": 1e3,
+        "nerf_loss_weight": 1e1,
+        "laplacian_loss_weight": 1e-4
+    }
+}
